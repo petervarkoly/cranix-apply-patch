@@ -1,2 +1,2 @@
-# cranix-apply-patch
-Package to apply patches by starting the windows clients
+# cranix-apply-regs
+Package to apply registry patches by starting the windows clients
