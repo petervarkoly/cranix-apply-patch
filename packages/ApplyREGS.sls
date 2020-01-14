@@ -9,16 +9,10 @@
 ###############################################################################
 copy_regs:
   file.recurse:
-    - source: salt://REGS
-    - name: "C:\\salt\\var\\REGS\\"
+    - source: salt://regs
+    - name: "C:\\salt\\var\\regs\\"
 
 apply_regs:
-  cmd.run:
+  oss_client.applyRegs:
     - onchanges: 
       - copy_regs
-    - names:  
-      - regedit /s "C:\\salt\\var\\REGS\\AllowUserDriverInstall.reg"
-      - regedit /s "C:\\salt\\var\\REGS\\ForceSpooling.reg"
-#     - regedit /s "C:\\salt\\var\\REGS\\PointPrintHKCU.reg"
-#     - regedit /s "C:\\salt\\var\\REGS\\PointPrintHKLM.reg"
-#     - regedit /s "C:\\salt\\var\\REGS\\TurnOfDefManagement.reg"
